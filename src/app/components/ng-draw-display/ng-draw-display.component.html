@@ -1,1 +1,12 @@
-<p>ng-draw-display works!</p>
+<svg 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  (mousedown)="onMouseDown($event)"
+  (mouseup)="onMouseUp($event)"
+  (mousemove)="onMouseMove($event)"
+>
+<g ng-draw-line *ngFor="let shape of drawingPolygon.lines">
+  [line]="shape">
+</g>
+</svg>
+

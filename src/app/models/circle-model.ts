@@ -1,15 +1,14 @@
-import * as internal from "stream";
-import { PointType } from "../enums/ngdraw-enums";
-import { NGDrawPoint } from "./point-model";
-import { NGDrawStroke } from "./stroke-model";
+import { DrawShape } from "./ng-draw-base.model";
 
+export class NGDrawCircle extends DrawShape {
 
-export interface NGDrawCircle {
-
+    private static internalid: number = 0;
     id: number;
 
-    x: number;
-    y: number;
     radius: number;
-    stroke: NGDrawStroke;
+
+    constructor() {
+        super('circle-' + NGDrawCircle.internalid++)
+        this.radius = 0;
+    }
 }

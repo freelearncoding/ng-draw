@@ -1,1 +1,10 @@
-<p>ng-draw-line works!</p>
+<svg:line *ngIf="shape != null"
+  attr.id="{{ shape.drawProperties.id }}"
+  class="draggable"
+  attr.x1="{{ shape.originPoint.x }}"
+  attr.y1="{{ shape.originPoint.y }}"
+  attr.x2="{{ shape.point.x }}"
+  attr.y2="{{ shape.point.y }}"
+>
+  <title>{{ shape.drawProperties.id }}</title>
+</svg:line>

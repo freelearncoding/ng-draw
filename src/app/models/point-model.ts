@@ -1,9 +1,12 @@
-import { PointType } from "../enums/ngdraw-enums";
 
-export interface NGDrawPoint {
+export class NGDrawPoint {
     id: number;
 
     x: number;
     y: number;
-    pointType: PointType;
+
+    constructor() {
+        this.x = 0;
+        this.y = 0;
+    }
 }

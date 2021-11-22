@@ -1,15 +1,14 @@
-import * as internal from "stream";
-import { PointType } from "../enums/ngdraw-enums";
-import { NGDrawPoint } from "./point-model";
+import { DrawShape } from "./ng-draw-base.model";
 
+export class NGDrawText extends DrawShape  {
 
-export interface NGDrawText {
-
+    private static internalid: number = 0;
     id: number;
 
     content: string;
-    height: number;
-    width: number;
-    rectLeft: number;
-    rectTop: number;
+    
+    constructor() {
+        super('text-' + NGDrawText.internalid++);
+        this.content = '';
+    }
 }
