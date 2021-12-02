@@ -8,9 +8,8 @@ describe('NgDrawRulerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgDrawRulerComponent ]
-    })
-    .compileComponents();
+      declarations: [NgDrawRulerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

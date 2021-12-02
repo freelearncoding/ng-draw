@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'ng-draw-container',
   templateUrl: './ng-draw-container.component.html',
-  styleUrls: ['./ng-draw-container.component.scss']
+  styleUrls: ['./ng-draw-container.component.scss'],
 })
-export class NgDrawContainerComponent implements OnInit {
+export class NgDrawContainerComponent implements OnInit, OnChanges {
+  constructor(public ref: ChangeDetectorRef) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  ngOnChanges(change: SimpleChanges): void {
+    this.ref.detectChanges();
   }
-
 }

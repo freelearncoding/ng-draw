@@ -8,9 +8,8 @@ describe('NgDrawContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgDrawContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [NgDrawContainerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

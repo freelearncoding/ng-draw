@@ -1,4 +1,3 @@
-
 export enum ShapeType {
   NoShape,
   Line,
@@ -9,11 +8,20 @@ export enum ShapeType {
   Path,
   PolyLine,
   Image,
-  Square
+  Square,
 }
 
 export enum State {
   None,
   Moving,
-  Finished
+  Finished,
+}
+
+export enum ToolType {
+  Pointer,
+  Move,
+  Rotate,
+  SelectArea,
+  Flipvertical,
+  Fliphorizontal
 }

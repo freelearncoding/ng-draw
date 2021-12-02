@@ -1,4 +1,11 @@
-import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { NGDrawLine } from 'src/app/models/line-model';
 import { NGDrawPoint } from 'src/app/models/point-model';
 import { NGDrawPolygon } from 'src/app/models/polygon-model';
@@ -13,14 +20,17 @@ export class NgDrawDisplayComponent implements OnInit, OnChanges {
   currentPosition: NGDrawPoint = new NGDrawPoint();
   drawingPolygon: NGDrawPolygon = new NGDrawPolygon();
   drawingLine: NGDrawLine = new NGDrawLine();
-  
-  constructor(public ref: ChangeDetectorRef) { }
+  height: number = 1000;
+  width: number = 1000;
+  svgCursor: string = 'svgCursor';
+
+  constructor(public ref: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.svg = document.querySelector('svg');
   }
   ngOnChanges(change: SimpleChanges): void {
-    this.ref.detectChanges()
+    this.ref.detectChanges();
   }
 
   getMousePosition(event: MouseEvent) {
@@ -41,7 +51,7 @@ export class NgDrawDisplayComponent implements OnInit, OnChanges {
         this.drawingLine.point.y = this.currentPosition.y;
 
         this.drawingPolygon.lines.push(this.drawingLine.clone());
-
+        this.drawingPolygon.lines = [].concat(this.drawingPolygon.lines);
         this.drawingLine = new NGDrawLine();
       }
     }

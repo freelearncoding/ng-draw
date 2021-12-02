@@ -8,9 +8,8 @@ describe('NgDrawDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgDrawDisplayComponent ]
-    })
-    .compileComponents();
+      declarations: [NgDrawDisplayComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

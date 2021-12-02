@@ -8,9 +8,8 @@ describe('NgDrawLineComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgDrawLineComponent ]
-    })
-    .compileComponents();
+      declarations: [NgDrawLineComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

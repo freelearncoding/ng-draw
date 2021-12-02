@@ -1,10 +1,15 @@
-<svg:line *ngIf="shape != null"
-  attr.id="{{ shape.drawProperties.id }}"
-  class="draggable"
-  attr.x1="{{ shape.originPoint.x }}"
-  attr.y1="{{ shape.originPoint.y }}"
-  attr.x2="{{ shape.point.x }}"
-  attr.y2="{{ shape.point.y }}"
+<svg:line
+  *ngIf="shape != null"
+  [attr.id]="shape.drawProperties.id"
+  [attr.x1]="shape.originPoint.x"
+  [attr.y1]="shape.originPoint.y"
+  [attr.x2]="shape.point.x"
+  [attr.y2]="shape.point.y"
+  [attr.fill]="shape.drawProperties.fill"
+  [attr.stroke]="shape.drawProperties.strokeFill"
+  [attr.stroke-dasharray]="shape.drawProperties.dashArray"
+  [attr.stroke-width]="shape.drawProperties.thickness"
+  [attr.stroke-opacity]="shape.drawProperties.opacity"
 >
   <title>{{ shape.drawProperties.id }}</title>
 </svg:line>
