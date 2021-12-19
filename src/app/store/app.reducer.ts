@@ -1,6 +1,7 @@
 // `createFeature` is imported from `@ngrx/store`
 import { state } from "@angular/animations";
 import { createFeature, createReducer, on } from "@ngrx/store";
+import { ToolType } from "../enums/ngdraw-enums";
 import { NGDrawPolygon } from "../models/polygon-model";
 
 import * as PolygonListActions from "./app.action";
@@ -11,11 +12,19 @@ export const featureKey = 'draw-polygons';
 interface State {
   polygons: NGDrawPolygon[];
   loading: boolean;
+  isDragging: boolean ;
+  isDrawing: boolean ;
+  isResizing: boolean ;
+  selectedTool: ToolType;
 }
 
 const initialState: State = {
   polygons: new Array<NGDrawPolygon>(),
   loading: false,
+  isDragging: false,
+  isDrawing: false,
+  isResizing: false,
+  selectedTool: 0
 };
 
 // export const adapter: EntityAdapter<NGDrawPolygon> = createEntityAdapter<NGDrawPolygon>({
