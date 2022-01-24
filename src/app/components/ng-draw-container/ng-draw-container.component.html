@@ -1,3 +1,91 @@
-<p>ng-draw-container works!</p>
-
-<ng-draw-display></ng-draw-display>
+<div class="container">
+    <div class="row header">
+      <div class="col-md-2">
+        <img width="160" height="80" />
+      </div>
+      <div class="col-md-10">
+        <h1></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 tools nopadding">
+        <div class="panel-group" id="accordion" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row nopadding">
+                <button
+                  (click)="selectShape('Line')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape">
+                  <img src="assets/svg-tool/line.png" width="24" height="24" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row nopadding">
+                <button
+                  (click)="selectTool('SelectArea')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape"
+                >
+                  <img src="assets/svg-tool/select-area.png" width="24" height="24" />
+                </button>
+                <button
+                  (click)="selectTool('Move')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape"
+                >
+                  <img src="assets/svg-tool/move.png" width="24" height="24" />
+                </button>
+                <button
+                  (click)="selectTool('Pointer')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape"
+                >
+                  <img src="assets/svg-tool/pointer.png" width="24" height="24" />
+                </button>
+  
+                <button
+                  (click)="selectTool('Rotate')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape"
+                >
+                  <img src="assets/svg-tool/rotate.png" width="24" height="24" />
+                </button>
+                <button
+                  (click)="selectTool('Fliphorizontal')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape"
+                >
+                  <img src="assets/svg-tool/flip-horizontal.png" width="24" height="24" />
+                </button>
+                <button
+                  (click)="selectTool('Flipvertical')"
+                  type="button"
+                  class="btn btn-outline-primary col-md-3 shape"
+                >
+                  <img src="assets/svg-tool/flip-vertical.png" width="24" height="24" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 toolbar">
+        <div class="row">
+          <div class="col-md-3">
+            <p>Mouse at : {{ drawHelper.currentPosition.x }},{{ drawHelper.currentPosition.y }}</p>
+          </div>
+          <div class="col-md-3">
+            <button (click)="clearShapes()" type="button" class="btn btn-light">
+              Clear
+            </button>
+          </div>
+        </div>
+        <div ng-draw-display class="svg-border"></div>
+      </div>
+    </div>
+  </div>
+  
